@@ -15,6 +15,16 @@ void print_message(const char *message)
     printf("%s\n", message);
 }
 
+/**
+ * @file main.c
+ * @brief Entry point for the device driver application.
+ *
+ * This file contains the main function which serves as the entry point
+ * for the device driver application. It prints a "Hello World!" message
+ * to the console.
+ *
+ * @return Returns 0 upon successful execution.
+ */
 int main()
 {
     print_message("Hello World!");
