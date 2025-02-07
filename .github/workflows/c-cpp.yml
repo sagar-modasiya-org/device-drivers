@@ -20,4 +20,24 @@ jobs:
       uses: actions/upload-artifact@v4.6.0
       with:
           name: Build-artifact
-          path: ${{github.workspace}}
+          path: ${{github.workspace}}/main.o
+
+  
+  # This workflow contains a single job called "build"
+  Deploy:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+    environment: 
+      name: dev
+    needs: build
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Deploy Stage 
+        run: echo Downloading Build Artificates!
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4.1.8
+        with:
+          Name: Build-artifact
+          Path: ${{github.workspace}}/Deploy
