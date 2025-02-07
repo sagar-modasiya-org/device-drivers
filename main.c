@@ -28,6 +28,7 @@ void print_message(const char *message)
 int main()
 {
     print_message("Hello World!");
+    print_message("feature1");
     print_message("feature2");
     return 0;
 }
